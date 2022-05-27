@@ -97,10 +97,6 @@ on fs
     chown system system /sys/class/power_supply/battery/is_aging_test
     chown system system /sys/class/power_supply/battery/dump_reg
 
-#add for tri_state_key
-    chown system system /sys/bus/platform/devices/soc/soc\:tri_state_key/hall_data_calib
-    chown system system /sys/bus/platform/devices/soc/soc\:tri_state_key/hall_set_value
-
 #add for tp firmware update
     write /sys/devices/platform/soc/a94000.i2c/i2c-4/4-004b/tp_fw_update 0
     write /sys/devices/platform/soc/a94000.i2c/i2c-4/4-0048/tp_fw_update 0
@@ -254,13 +250,10 @@ on fs
 
 on boot
 #ifdef VENDOR_EDIT
-    chmod 0666 /dev/goodix_fp
     chmod 0660 /sys/devices/platform/soc/soc:fingerprint_detect/sensor_version
     chown system system /sys/devices/platform/soc/soc:fingerprint_detect/sensor_version
     chmod 0666 /proc/touchpanel/touch_hold
     chown system system /proc/touchpanel/touch_hold
-    chmod 0664 sys/devices/platform/soc/soc:goodix_fp/screen_state
-    chown system system sys/devices/platform/soc/soc:goodix_fp/screen_state
     chmod 0666 /dev/qseecom
 
     # access permission for egis

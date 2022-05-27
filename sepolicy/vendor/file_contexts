@@ -1,7 +1,6 @@
 # Binaries
 /(vendor|system/vendor)/bin/dashd                     u:object_r:dashd_exec:s0
 /(vendor|system/vendor)/bin/opf-service               u:object_r:opf_exec:s0
-/(vendor|system/vendor)/bin/tri-state-key-calibrate   u:object_r:tri-state-key-calibrate_exec:s0
 /(vendor|system/vendor)/bin/vl53l1_daemon_main        u:object_r:vl53l1_daemon_main_exec:s0
 /(vendor|system/vendor)/bin/wifi-mac-generator        u:object_r:wifi-mac-generator_exec:s0
 
@@ -32,7 +31,6 @@
 /dev/cc_ctl               u:object_r:graphics_device:s0
 /dev/dash                 u:object_r:dash_device:s0
 /dev/fragment_monitor     u:object_r:fragment_monitor_device:s0
-/dev/goodix_fp            u:object_r:fingerprintd_device:s0
 /dev/ht_ctl               u:object_r:graphics_device:s0
 /dev/mmw0_thermal         u:object_r:therm_device:s0
 /dev/mmw1_thermal         u:object_r:therm_device:s0
