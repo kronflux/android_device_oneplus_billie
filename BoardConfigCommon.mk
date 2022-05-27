@@ -19,7 +19,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 BOARD_VENDOR := oneplus
 
-COMMON_PATH := device/oneplus/sm7250-common
+COMMON_PATH := device/oneplus/sm6350-common
 
 # Architecture
 TARGET_ARCH := arm64
@@ -38,12 +38,20 @@ TARGET_BOOTLOADER_BOARD_NAME := lito
 TARGET_NO_BOOTLOADER := true
 
 # Display
-TARGET_SCREEN_DENSITY := 450
+TARGET_SCREEN_DENSITY := 420
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 loop.max_part=7 cgroup.memory=nokmem,nosocket reboot=panic_warm
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom
+BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0 androidboot.memcg=1
+BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
+BOARD_KERNEL_CMDLINE += service_locator.enable=1
+BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3
+BOARD_KERNEL_CMDLINE += swiotlb=2048 cgroup.memory=nokmem,nosocket
+BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += reboot=panic_warm
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -51,7 +59,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
 TARGET_KERNEL_SOURCE := kernel/oneplus/$(TARGET_DEVICE)
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CONFIG := vendor/lito-perf_defconfig
+TARGET_KERNEL_CONFIG := vendor/billie-perf_defconfig
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -79,7 +87,7 @@ AB_OTA_PARTITIONS += \
     vendor
 
 # ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Audio
 AUDIO_FEATURE_ENABLED_AHAL_EXT := false
@@ -141,7 +149,7 @@ BOARD_USES_METADATA_PARTITION := true
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 100663296
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 236009631744
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -207,4 +215,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
--include vendor/oneplus/sm7250-common/BoardConfigVendor.mk
+-include vendor/oneplus/sm6350-common/BoardConfigVendor.mk

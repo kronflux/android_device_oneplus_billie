@@ -19,75 +19,6 @@ value:2906
 [AID_VENDOR_THERMAL]
 value:2907
 
-[AID_VENDOR_FASTRPC]
-value:2908
-
-[system/vendor/bin/cnd]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE NET_ADMIN BLOCK_SUSPEND
-
-[system/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_ADMIN BLOCK_SUSPEND
-
-[system/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti-lazy]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_ADMIN BLOCK_SUSPEND
-
-[system/vendor/bin/ims_rtp_daemon]
-mode: 0755
-user: AID_RADIO
-group: AID_RADIO
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/imsdatadaemon]
-mode: 0755
-user: AID_RADIO
-group: AID_RADIO
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/imsrcsd]
-mode: 0755
-user: AID_RADIO
-group: AID_RADIO
-caps: NET_BIND_SERVICE WAKE_ALARM BLOCK_SUSPEND
-
-[system/vendor/bin/loc_launcher]
-mode: 0755
-user: AID_GPS
-group: AID_GPS
-caps: SETGID SETUID
-
-[system/vendor/bin/pd-mapper]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/pm-service]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/slim_daemon]
-mode: 0755
-user: AID_GPS
-group: AID_GPS
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/wcnss_filter]
-mode: 0755
-user: AID_BLUETOOTH
-group: AID_BLUETOOTH
-caps: BLOCK_SUSPEND
-
 [vendor/bin/cnd]
 mode: 0755
 user: AID_SYSTEM
@@ -100,23 +31,11 @@ user: AID_BLUETOOTH
 group: AID_BLUETOOTH
 caps: NET_ADMIN BLOCK_SUSPEND
 
-[vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti-lazy]
-mode: 0755
-user: AID_BLUETOOTH
-group: AID_BLUETOOTH
-caps: NET_ADMIN BLOCK_SUSPEND
-
 [vendor/bin/ims_rtp_daemon]
 mode: 0755
 user: AID_RADIO
 group: AID_RADIO
 caps: NET_BIND_SERVICE
-
-[vendor/bin/imsdaemon]
-mode: 0755
-user: AID_RADIO
-group: AID_RADIO
-caps: NET_BIND_SERVICE WAKE_ALARM BLOCK_SUSPEND
 
 [vendor/bin/imsdatadaemon]
 mode: 0755
@@ -146,7 +65,7 @@ caps: NET_BIND_SERVICE
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
-caps: NET_BIND_SERVICE
+caps: NET_BIND_SERVICE SYS_BOOT
 
 [vendor/bin/sensors.qti]
 mode: 0755

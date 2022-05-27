@@ -19,7 +19,7 @@
 from hashlib import sha1
 import sys
 
-device='sm7250-common'
+device='sm6350-common'
 vendor='oneplus'
 
 lines = [ line for line in open('proprietary-files.txt', 'r') ]

@@ -15,14 +15,4 @@
 <resources>
     <!-- Allow devices to hide ringer button above volume slider -->
     <bool name="config_hideRingerButton">true</bool>
-
-    <!-- Allow devices override audio panel location to the left side -->
-    <bool name="config_audioPanelOnLeftSide">true</bool>
-
-    <!-- HBM type of UDFPS overlay.
-            0 - GLOBAL HBM 
-            1 - LOCAL HBM
-    -->
-    <integer name="config_udfps_hbm_type">0</integer>
-
 </resources>

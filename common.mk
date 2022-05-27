@@ -24,7 +24,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/oneplus/sm7250-common/sm7250-common-vendor.mk)
+$(call inherit-product, vendor/oneplus/sm6350-common/sm6350-common-vendor.mk)
 $(call inherit-product, $(LOCAL_PATH)/interfaces.mk)
 
 # GoogleCamera
@@ -91,11 +91,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-
-# Task profiles
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/task_profiles/cgroups_31.json:$(TARGET_COPY_OUT_SYSTEM)/etc/task_profiles/cgroups_31.json \
-    $(LOCAL_PATH)/task_profiles/task_profiles_31.json:$(TARGET_COPY_OUT_SYSTEM)/etc/task_profiles/task_profiles_31.json
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -509,8 +504,16 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.use_color_management=true \
     ro.surface_flinger.wcg_composition_dataspace=143261696
 
-# Disable Rescue Party on userdebug & eng build
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+# Disable secure ADB and Rescue Party on eng
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0
+    persist.sys.disable_rescue=true
+endif
+
+# Disable Rescue Party on userdebug
+ifneq (,$(filter userdebug, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.disable_rescue=true
 endif

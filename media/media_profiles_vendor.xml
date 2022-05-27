@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2019, 2021 The Linux Foundation. All rights reserved.
+<!-- Copyright (C) 2012-2019 The Linux Foundation. All rights reserved.
      Not a contribution.
      Copyright (C) 2010 The Android Open Source Project
 
@@ -185,6 +185,59 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
+
+    <EncoderProfile quality="highspeed720p" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="12000000"
+             width="1280"
+             height="720"
+             frameRate="240" />
+
+      <Audio codec="aac"
+             bitRate="96000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="highspeedlow" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="12000000"
+             width="1280"
+             height="720"
+             frameRate="240" />
+
+      <Audio codec="aac"
+             bitRate="96000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="highspeed1080p" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="42000000"
+             width="1920"
+             height="1080"
+             frameRate="120" />
+
+      <Audio codec="aac"
+             bitRate="96000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="highspeedhigh" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="42000000"
+             width="1920"
+             height="1080"
+             frameRate="120" />
+
+      <Audio codec="aac"
+             bitRate="96000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+
 
     <EncoderProfile quality="4kdci" fileFormat="mp4" duration="30">
       <Video codec="h264"
@@ -415,9 +468,9 @@
 
     <EncoderProfile quality="high" fileFormat="mp4" duration="30">
       <Video codec="h264"
-             bitRate="42000000"
-             width="3840"
-             height="2160"
+             bitRate="20000000"
+             width="1920"
+             height="1080"
              frameRate="30" />
 
       <Audio codec="aac"
@@ -491,7 +544,8 @@
              channels="2" />
     </EncoderProfile>
 
-    <EncoderProfile quality="4kdci" fileFormat="mp4" duration="30">
+    <!-- Vendor Edit start -->
+    <!--<EncoderProfile quality="4kdci" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="42000000"
             width="4096"
@@ -512,7 +566,8 @@
             bitRate="156000"
             sampleRate="48000"
             channels="2" />
-    </EncoderProfile>
+    </EncoderProfile>-->
+    <!-- Vendor Edit end -->
     <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="192000"
@@ -711,19 +766,6 @@
              channels="1" />
     </EncoderProfile>
 
-    <EncoderProfile quality="high" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="42000000"
-             width="2560"
-             height="1440"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
     <EncoderProfile quality="qvga" fileFormat="mp4" duration="60">
       <Video codec="h264"
              bitRate="512000"
@@ -827,20 +869,6 @@
              bitRate="12200"
              sampleRate="8000"
              channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="42000000"
-             width="2560"
-             height="1440"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">

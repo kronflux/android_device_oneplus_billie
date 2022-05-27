@@ -137,22 +137,6 @@
             <instance>cnd</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>interfaces.factoryAta</name>
-        <version>1.0</version>
-        <interface>
-            <name>IFactoryAta</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>interfaces.factoryInterface</name>
-        <version>1.0</version>
-        <interface>
-            <name>IFactoryInterface</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="aidl" optional="true">
         <name>vendor.aac.hardware.richtap.vibrator</name>
         <interface>
@@ -190,6 +174,14 @@
         <version>2.0</version>
         <interface>
             <name>IDms</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>vendor.egistec.hardware.fingerprint</name>
+        <version>4.0</version>
+        <interface>
+            <name>IBiometricsFingerprintRbs</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -405,7 +397,7 @@
     <hal format="hidl" optional="true">
         <name>vendor.qti.data.factory</name>
         <version>1.0</version>
-        <version>2.0-3</version>
+        <version>2.0-2</version>
         <interface>
             <name>IFactory</name>
             <instance>default</instance>
@@ -774,7 +766,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.ims</name>
-        <version>1.0-7</version>
+        <version>1.0-6</version>
         <interface>
             <name>IImsRadio</name>
             <instance>imsradio0</instance>
