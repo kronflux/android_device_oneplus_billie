@@ -16,6 +16,7 @@
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+ALLOW_MISSING_DEPENDENCIES := true
 
 BOARD_VENDOR := oneplus
 
@@ -51,7 +52,8 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3
 BOARD_KERNEL_CMDLINE += swiotlb=2048 cgroup.memory=nokmem,nosocket
 BOARD_KERNEL_CMDLINE += loop.max_part=7
-BOARD_KERNEL_CMDLINE += reboot=panic_warm
+BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -64,11 +66,12 @@ TARGET_KERNEL_CONFIG := vendor/billie-perf_defconfig
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := lito
+BUILD_WITHOUT_VENDOR := true
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+#TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/system_ext.prop
 
 # A/B
@@ -77,14 +80,12 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
-    odm \
     product \
     recovery \
     system \
     system_ext \
     vbmeta \
-    vbmeta_system \
-    vendor
+    vbmeta_system
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
@@ -153,7 +154,7 @@ BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_ONEPLUS_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor
+BOARD_ONEPLUS_DYNAMIC_PARTITIONS_PARTITION_LIST := product system system_ext
 BOARD_SUPER_PARTITION_GROUPS := oneplus_dynamic_partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_COPY_OUT_ODM := odm
@@ -210,6 +211,3 @@ WIFI_DRIVER_STATE_ON := "ON"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-# Inherit from the proprietary version
--include vendor/oneplus/sm6350-common/BoardConfigVendor.mk

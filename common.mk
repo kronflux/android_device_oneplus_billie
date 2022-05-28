@@ -15,7 +15,7 @@
 #
 
 # Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Include GSI keys
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
@@ -24,11 +24,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/oneplus/sm6350-common/sm6350-common-vendor.mk)
+#$(call inherit-product, vendor/oneplus/sm6350-common/sm6350-common-vendor.mk)
 $(call inherit-product, $(LOCAL_PATH)/interfaces.mk)
-
-# GoogleCamera
-$(call inherit-product, packages/apps/GoogleCamera/config.mk)
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
