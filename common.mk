@@ -36,8 +36,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-aosp
 
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 PRODUCT_USE_PRODUCT_VNDK_OVERRIDE := true
@@ -270,7 +268,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.oneplus
+    android.hardware.biometrics.fingerprint@2.1-service.oneplus
 
 # GPS
 PRODUCT_COPY_FILES += \
