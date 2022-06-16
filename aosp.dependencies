@@ -5,8 +5,8 @@
     "remote"      : "pixel"
   },
   {
-    "repository"  : "KakatkarAkshay/packages_apps_GoogleCamera",
-    "target_path" : "packages/apps/GoogleCamera",
+    "repository"  : "kronflux/packages_apps_OnePlusCamera",
+    "target_path" : "packages/apps/OnePlusCamera",
     "remote"      : "gitlab",
     "branch"      : "twelve"
   },
