@@ -9,11 +9,5 @@
     "target_path" : "packages/apps/OnePlusCamera",
     "remote"      : "gitlab",
     "branch"      : "twelve"
-  },
-  {
-    "repository"  : "vendor_oneplus_sm6350-common",
-    "target_path" : "vendor/oneplus/sm6350-common",
-    "branch"      : "twelve",
-    "remote"      : "pixel-devices-blobs"
   }
 ]
