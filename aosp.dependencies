@@ -1,5 +1,23 @@
 [
   {
+    "repository": "kronflux/kernel_oneplus_billie",
+    "target_path": "kernel/oneplus/sm6350",
+    "branch": "android-11.0",
+    "remote": "github"
+  },
+  {
+    "repository": "kronflux/vendor_oneplus_billie",
+    "target_path": "vendor/oneplus/billie",
+    "branch": "twelve",
+    "remote": "github"
+  },
+  {
+    "repository": "kronflux/vendor_oneplus_billie-vendor",
+    "target_path": "vendor/oneplus/billie-vendor",
+    "branch": "oos11",
+    "remote": "github"
+  },
+  {
     "repository"  : "hardware_oneplus",
     "target_path" : "hardware/oneplus",
     "remote"      : "pixel"

@@ -31,7 +31,12 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-aosp
 
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
 # VNDK
+PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 PRODUCT_USE_PRODUCT_VNDK_OVERRIDE := true
 
@@ -210,6 +215,9 @@ PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
 # NFC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
+
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2 \
     android.hardware.nfc@1.2-service \
@@ -400,3 +408,6 @@ PRODUCT_PACKAGES += \
     libcodec2_soft_vp9enc \
     libcodec2_soft_vp8enc \
     libcodec2_soft_xaacdec
+
+# Inherit from vendor blobs
+$(call inherit-product, vendor/oneplus/billie/billie-vendor.mk)
