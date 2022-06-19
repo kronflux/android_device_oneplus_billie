@@ -130,15 +130,11 @@ TARGET_USES_QTI_MAPPER_EXTENSIONS_1_1 := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
-
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/device_framework_matrix.xml \
     vendor/aosp/config/device_framework_matrix.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
