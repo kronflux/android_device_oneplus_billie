@@ -4,13 +4,13 @@ vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libfastcvdsp_stub.so
-vendor/lib/libfastcvopt.so
+-vendor/lib/libfastcvopt.so
 vendor/lib/libmdsprpc.so
 vendor/lib/libsdsprpc.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libfastcvdsp_stub.so
-vendor/lib64/libfastcvopt.so
+-vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
 
@@ -182,7 +182,6 @@ vendor/lib/hw/android.hardware.audio@4.0-impl.so
 vendor/lib/hw/android.hardware.audio@5.0-impl.so
 vendor/lib/hw/android.hardware.audio@6.0-impl.so
 vendor/lib/hw/audio.primary.default.so
--vendor/lib/hw/audio.primary.lito.so
 vendor/lib/hw/audio.r_submix.default.so
 vendor/lib/hw/audio.usb.default.so
 vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
@@ -205,7 +204,7 @@ vendor/lib64/hw/android.hardware.audio@4.0-impl.so
 vendor/lib64/hw/android.hardware.audio@5.0-impl.so
 vendor/lib64/hw/android.hardware.audio@6.0-impl.so
 vendor/lib64/hw/audio.primary.default.so
--vendor/lib64/hw/audio.primary.lito.so
+vendor/lib64/hw/audio.primary.lito.so
 vendor/lib64/hw/audio.r_submix.default.so
 vendor/lib64/hw/audio.usb.default.so
 vendor/lib64/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
@@ -1467,7 +1466,7 @@ vendor/lib/libOmxSwVdec.so
 vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/libOmxVdec.so
 vendor/lib/libOmxVenc.so
--vendor/lib/libplatformconfig.so
+vendor/lib/libplatformconfig.so
 vendor/lib/libstagefrighthw.so
 vendor/lib64/libc2dcolorconvert.so
 vendor/lib64/libmm-omxcore.so
@@ -1481,7 +1480,7 @@ vendor/lib64/libOmxSwVdec.so
 vendor/lib64/libOmxSwVencMpeg4.so
 vendor/lib64/libOmxVdec.so
 vendor/lib64/libOmxVenc.so
--vendor/lib64/libplatformconfig.so
+vendor/lib64/libplatformconfig.so
 vendor/lib64/libstagefrighthw.so
 
 # NFC
@@ -2332,8 +2331,8 @@ vendor/etc/init/android.hardware.thermal@2.0-service.qti.rc
 vendor/etc/init/init_thermal-engine.rc
 vendor/etc/thermal-engine.conf
 -vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.qti.xml
-vendor/lib/libthermalclient.so
-vendor/lib64/libthermalclient.so
+-vendor/lib/libthermalclient.so
+-vendor/lib64/libthermalclient.so
 
 # Time
 -vendor/app/TimeService/TimeService.apk

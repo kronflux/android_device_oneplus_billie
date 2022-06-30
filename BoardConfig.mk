@@ -69,7 +69,6 @@ TARGET_KERNEL_CONFIG := vendor/billie-perf_defconfig
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := lito
-BUILD_WITHOUT_VENDOR := true
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
