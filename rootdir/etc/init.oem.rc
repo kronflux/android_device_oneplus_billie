@@ -137,9 +137,9 @@ on fs
     chown system system /proc/s2_reset_config
     chown system system /proc/pmicWd
 
-# rayboo.lin@bsp, 2020/09/09 add for simCard holder 
-    detect chmod 0666 /proc/simholder/sim_holder_detect chown system 
-    system /proc/simholder/sim_holder_detect
+# rayboo.lin@bsp, 2020/09/09 add for simCard holder detect
+    chmod 0666 /proc/simholder/sim_holder_detect
+    chown system system /proc/simholder/sim_holder_detect
 
 #uma.mahesh@Imaging 2020/4/8 add for factory item
     chown system system /sys/class/leds/led:torch_0/brightness
