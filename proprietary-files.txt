@@ -1,4 +1,3 @@
-
 # ADSP
 vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
@@ -447,8 +446,6 @@ vendor/lib64/libcvp_common.so
 vendor/lib64/vendor.qti.hardware.cvp@1.0.so
 
 # Camera
--system_ext/framework/vendor.oneplus.hardware.camera-V1.0-java.jar
--system_ext/framework/vendor.oneplus.hardware.CameraMDMHIDL-V1.0-java.jar
 system_ext/lib/vendor.oneplus.hardware.camera@1.0-adapter-helper.so
 system_ext/lib/vendor.oneplus.hardware.camera@1.0.so
 system_ext/lib/vendor.oneplus.hardware.CameraMDMHIDL@1.0-adapter-helper.so
@@ -1136,7 +1133,6 @@ vendor/firmware/hx_criteria.csv
 vendor/firmware/tp/FW_20813_FT3518.img
 vendor/firmware/tp/LIMIT_20813_FT3518.img
 vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
-vendor/firmware/wlan/qca_cld/wlan_mac.bin
 
 # GPS
 system_ext/etc/permissions/com.qti.location.sdk.xml

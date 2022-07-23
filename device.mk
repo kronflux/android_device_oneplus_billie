@@ -206,6 +206,15 @@ PRODUCT_PACKAGES += \
     libipanat \
     liboffloadhal
 
+# Kernel
+#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel
+#LOCAL_DTB := $(LOCAL_PATH)/prebuilts/dtb.img
+
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_DTB):dtb.img \
+#    $(TARGET_PREBUILT_KERNEL):kernel \
+#    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/prebuilts/vendor-modules,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
+
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail
@@ -340,7 +349,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.secure=0 \
-    ro.adb.secure=0
+    ro.adb.secure=0 \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.usb.config=mtp,adb \
     persist.sys.disable_rescue=true
 endif
 
