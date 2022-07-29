@@ -85,15 +85,6 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_NO_KERNEL := false
 
-# Kernel - prebuilt
-#TARGET_FORCE_PREBUILT_KERNEL := false
-#ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
-#TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilts/dtb.img
-#TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel
-#BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
-#BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
-#endif
-
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := lito
@@ -211,11 +202,13 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # Security patch level
 VENDOR_SECURITY_PATCH := 2022-05-01
 
-# Sepolicy
+# Sepolicy - Common
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+# Sepolicy - billie
+include device/oneplus/billie/sepolicy/billie-sepolicy.mk
+
+# Sepolicy - LiveDisplay
 ifeq ($(CUSTOM_VERSION_PROP), twelve_plus)
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy-livedisplay
 endif
@@ -246,5 +239,3 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # inherit from the proprietary version
 -include vendor/oneplus/billie/BoardConfigVendor.mk
 
-# Inherit Prebuilt Vendor/ODM Images
--include vendor/oneplus/billie-vendor/BoardConfig.mk
